@@ -4,14 +4,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import removeUser from '../../redux/actions/removeUser';
 import { ReactComponent as MenuIcon } from '../../assets/images/menu-dots.svg';
-import { ReactComponent as Close } from '../../assets/images/close.svg';
-import { ReactComponent as Arrow } from '../../assets/images/arrow.svg';
-import './Navbar.css';
 import Logo from '../Logo';
+import './Navbar.css';
 
 const Navbar = ({ showTutorialTodo, showTutorialSupport, showClose, removeUser }) => {
   const [showMenu, setshowMenu] = useState(false);
-  const [clickCount, setClickCount] = useState(0);
 
   const logout = () => {
     localStorage.removeItem('state');
@@ -20,65 +17,20 @@ const Navbar = ({ showTutorialTodo, showTutorialSupport, showClose, removeUser }
     window.location.href = "/login";
   };
 
-  const gotoNextTutorial = () => {
-    window.location.href = "/tutorial/support";
-  }
-
-  const closeTutorial = () => {
-    window.location.href = "/";
-  }
-
   const handleClick = () => {
-    if (showClose) {
-      window.location.replace("/");
-
-    } else {
-      setClickCount(clickCount+1);
-
-      if (clickCount === 4) {
-        window.location.href = "/support/menu";
-      } else {
-        setshowMenu(!showMenu);
-      }
-    }
+    setshowMenu(!showMenu);
   }
   
   return (
     <div className="Navbar">
       <Logo small />
       <div onClick={handleClick} >
-        {showClose ? ( <Close className="Icon" /> ) : (<MenuIcon className="Icon" />)}
-        {showTutorialTodo || showTutorialSupport ? (
-          <>
-            {showTutorialTodo && (
-              <div className="MenuWrapper">
-                <div className="Tutorial">
-                  <div className="Arrow"><Arrow /></div>
-                  <p>This is your menu. Click here to access your settings or to logout. <br /><br /> To access help, click it 5 times in succession.</p>
-                  <div className="GotIt" onClick={gotoNextTutorial}>OK, GOT IT</div>
-                </div>
-              </div>
-            )}
-
-            {showTutorialSupport && (
-              <div className="MenuWrapper">
-                <div className="Tutorial">
-                  <div className="Arrow"><Arrow /></div>
-                  <p>Click here at any time to exit back to your ToDo list app.</p>
-                  <div className="GotIt" onClick={closeTutorial}>OK, GOT IT</div>
-                </div>
-              </div>
-            )}
-
-          </>
-
-        ) : (
-          <>
-            {showMenu && (
+        <MenuIcon className="Icon" />
+        {showMenu && (
               <div className="MenuWrapper">
                 <div className="DropdownMenu">
                   <div className="DropdownItem">
-                    <Link to="/privacy-policy">Privacy Policy</Link>
+                    <Link to="/settings">Settings</Link>
                   </div>
                   <div className="DropdownItem">
                     <div role="presentation" onClick={logout}>Logout</div>
@@ -86,8 +38,6 @@ const Navbar = ({ showTutorialTodo, showTutorialSupport, showClose, removeUser }
                 </div>
               </div>
             )}
-          </>
-        )}
       </div>
     </div>
   )

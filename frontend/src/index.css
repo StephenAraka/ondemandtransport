@@ -23,8 +23,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background: #dfefff;
-  background: linear-gradient(192.32deg, #DFEFFF 0%, #2196F3 100%);
+  background: #ffffff;
 }
 
   /* background: linear-gradient(192.32deg, #DFEFFF 0%, #2196F3 100%); */
@@ -75,13 +74,13 @@ header div {
 }
 
 .AlternativeLink {
-  color: #ffffff;
+  color: #000;
 }
 
 .AlternativeLink a {
   text-decoration: none;
   border-bottom: 1px solid #ffffff;
-  color: #ffffff;
+  color: #000;
 }
 
 .Error {
