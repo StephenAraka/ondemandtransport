@@ -1,0 +1,7 @@
+Pipfile.lock
+Pipfile
+WeGo/migrations
+authentication/migrations
+# /venv
+/.idea
+/.vscode
