@@ -1,0 +1,29 @@
+.Task {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #051956;
+  /* background: #2196F3; */
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  color: #ffffff;
+}
+
+.CheckBoxAndLabel {
+  display: flex;
+  align-items: center;
+}
+
+.Label {
+  margin-left: 1rem;
+}
+
+.Label.Complete {
+  text-decoration: line-through;
+}
+
+.Icon {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}

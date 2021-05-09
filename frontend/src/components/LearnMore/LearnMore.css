@@ -1,0 +1,16 @@
+.LearnMore {
+  display: flex;
+  flex-direction: column;
+}
+
+.LearnMore section {
+  flex-grow: 1;
+  display: grid;
+  place-items: center;
+  padding: 1rem 0;
+  color: black;
+}
+
+p {
+  font-size: 30px;
+}

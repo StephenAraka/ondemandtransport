@@ -1,0 +1,10 @@
+.TimeIcon {
+  
+}
+
+.TimeIcon .Icon {
+  height: 3rem;
+  width: 3rem;
+  bottom: 0;
+  right: 0;
+}

@@ -1,0 +1,8 @@
+.FindCenterPage section {
+  position: relative;
+}
+
+.FindCenterPage .InputTextField {
+  position: absolute;
+  bottom: 0;
+}

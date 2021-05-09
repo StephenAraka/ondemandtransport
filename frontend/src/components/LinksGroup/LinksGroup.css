@@ -1,0 +1,22 @@
+.LinksGroup {
+  flex-grow: 1;
+  padding: 2rem 0;
+  display: grid;
+  gap: .2rem;
+  /* min-height: 20rem; */
+}
+
+.Link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #051956;
+  /* background: #2196F3; */
+  border-radius: 10px;
+  padding: .5rem 1rem;
+  color: #ffffff;
+}
+
+.LinksGroup a {
+  text-decoration: none;
+}

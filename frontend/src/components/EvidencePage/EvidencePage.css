@@ -1,0 +1,28 @@
+.UploadPage  {
+  display: flex;
+  flex-direction: column;
+}
+
+.UploadPage section {
+  flex-grow: 1;
+  display: grid;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.Description {
+  border: 2px solid black;
+  background-color: white;
+  padding: .5rem;
+  border-radius: 10px;
+}
+
+.InputFileUpload {
+  
+}
+
+.ViewFilesLink a {
+  color: #ffffff;
+  text-decoration: underline;
+  cursor: pointer;
+}

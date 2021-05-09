@@ -1,0 +1,11 @@
+.LoginLogo {
+  display: grid;
+  place-items: center;
+  font-family: montserrat, sans-serif;
+}
+
+.AppName {
+  font-size: xx-large;
+}
+
+

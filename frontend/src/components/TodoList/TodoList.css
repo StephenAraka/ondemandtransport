@@ -1,0 +1,16 @@
+.TodoList {
+  flex-grow: 1;
+  padding: 2rem 0;
+  display: grid;
+  gap: .2rem;
+}
+
+.EmptyMessage {
+  align-self: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.TodoList.NoTasks {
+  min-height: 20rem;
+}

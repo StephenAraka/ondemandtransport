@@ -1,7 +1,15 @@
-Pipfile.lock
-Pipfile
-WeGo/migrations
-authentication/migrations
-# /venv
+./backend/Pipfile.lock
+./backend/Pipfile
+./backend/WeGo/migrations
+./backend/authentication/migrations
+./backend/venv
 /.idea
 /.vscode
+
+./frontend/node_modules
+./frontend/build
+
+
+./frontend/npm-debug.log*
+./frontend/yarn-debug.log*
+./frontend/yarn-error.log*

@@ -1,0 +1,12 @@
+.Button {
+  border: 2px solid #051956;
+  padding: .5rem 1rem;
+  background-color: #051956;
+  border-radius: 10px;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: bold;
+  cursor: pointer;
+}
+
