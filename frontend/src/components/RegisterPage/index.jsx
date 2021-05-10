@@ -13,8 +13,10 @@ import API_URL from '../../config';
 
 const RegisterPage = (props) => {
   const [user, setUser ] = useState({
-    name: '',
+    firstname: '',
+    lastname: '',
     email: '',
+    phone: '',
     password: ''
   });
   const [error, setError] = useState('');
@@ -33,12 +35,14 @@ const RegisterPage = (props) => {
   };
 
   const handleRegister = () => {
-    const { name, email, password } = user;
+    const { firstname, lastname, email, phone, password } = user;
 
     //* Trim user details
     const userInfo = {
-      name: trimmed(name),
+      firstname,
+      lastname,
       email: trimmed(email),
+      phone,
       password: trimmed(password)
     }
     
@@ -81,23 +85,27 @@ const RegisterPage = (props) => {
 
   return (
     <div className="RegisterPage Page">
-      <div className="LoginLogo">
-        <Logo />
-        <div className="AppName">Eirrands</div>
-        doing lots has never been easier
-      </div>
-
       <div className="Form">
         <div className="FormTitle">sign up</div>
 
         <InputTextField
           required
           type="text"
-          name="name"
-          value={user.name}
-          placeholder="Name"
+          name="firstname"
+          value={user.firstname}
+          placeholder="First Name"
           onChange={handleChange}
         />
+
+        <InputTextField
+          required
+          type="text"
+          name="lastname"
+          value={user.lastname}
+          placeholder="Last Name"
+          onChange={handleChange}
+        />
+
         <InputTextField 
           required
           type="text"
@@ -106,6 +114,16 @@ const RegisterPage = (props) => {
           placeholder="Email"
           onChange={handleChange}
         />
+
+        <InputTextField 
+          required
+          type="number"
+          name="phone"
+          value={user.phone}
+          placeholder="Phone"
+          onChange={handleChange}
+        />
+
         <InputTextField 
           required
           type="password"
@@ -128,10 +146,6 @@ const RegisterPage = (props) => {
 
         <div className="AlternativeLink">
           Have an account? <Link to='/login'>Login here</Link>
-        </div>
-
-        <div className="AlternativeLink PolicyLink">
-          <Link to='/privacy-policy'>Privacy Policy</Link> | <Link to='/contact-us'>Contact Us</Link>
         </div>
       </div>
     </div>

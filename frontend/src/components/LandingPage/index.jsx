@@ -18,10 +18,14 @@ const LandingPage = (props) => {
       <div className="LoginLogo">
         <TaxiImg className="TaxiImg" />
         <div className="AppName">on demand transport</div>
-        Get there without a hussle
+        <div className="Slogan">Get there without a hussle</div>
       </div>
 
       <div className="ButtonSection">
+        <div className="TitleWrapper">
+        <div className="AppName">on demand transport</div>
+        Get there without a hussle
+        </div>
         <Link to='/login' className="LandingLoginBtn">
           Login
         </Link>
