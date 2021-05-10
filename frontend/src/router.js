@@ -9,10 +9,10 @@ import store from './redux/store';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import LandingPage from './components/LandingPage';
-import ZonesPage from './pages/ZonesPage';
-import RoutesPage from './pages/RoutesPage';
-import DriversPage from './pages/DriversPage';
-import BusstopsPage from './pages/BusstopsPage';
+import AddManagerPage from './components/AddManagerPage';
+import AddDriverPage from './components/AddDriverPage';
+import AdminLinksPage from './components/AdminLinksPage';
+import PassengerLinksPage from './components/PassengerLinksPage';
 
 // Protected route should have token. If not, login.
 // const ProtectedRoute = ({ isAllowed, ...props }) => (
@@ -30,10 +30,10 @@ const Routes = () => {
         <Route exact path="/" component={LandingPage} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
-        <Route exact path="/zones" component={ZonesPage} />
-        <Route exact path="/drivers" component={DriversPage} />
-        <Route exact path="/busstops" component={BusstopsPage} />
-        <Route exact path="/routes" component={RoutesPage} />
+        <Route exact path="/admin" component={AdminLinksPage} />
+        <Route exact path="/passenger" component={PassengerLinksPage} />
+        <Route exact path="/admin/add-manager" component={AddManagerPage} />
+        <Route exact path="/admin/add-driver" component={AddDriverPage} />
         {/* <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} /> */}
       </Switch>
     </Router>

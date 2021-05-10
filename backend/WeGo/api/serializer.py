@@ -11,7 +11,7 @@ class ManagerSerializer(serializers.ModelSerializer):
         extra_kwargs = {
             'roles': {'read_only': True},
         }
-
+        
 
 class PassengerSerializer(serializers.ModelSerializer):
     class Meta:
