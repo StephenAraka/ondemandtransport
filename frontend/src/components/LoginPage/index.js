@@ -7,6 +7,7 @@ import saveUser from '../../redux/actions/saveUser';
 import { isValidEmail, trimmed } from '../../helpers';
 import Button from '../Button';
 import Logo from '../Logo';
+import { ReactComponent as TaxiImg } from '../../assets/images/taxi.svg';
 import InputTextField from '../InputText';
 import API_URL from '../../config';
 import './LoginPage.css';
@@ -75,12 +76,6 @@ const LoginPage = (props) => {
 
   return (
     <div className="LoginPage Page">
-      <div className="LoginLogo">
-        <Logo />
-        <div className="AppName">Eirrands</div>
-        doing lots has never been easier
-      </div>
-
       <div className="Form">
         <div className="FormTitle">welcome back</div>
 

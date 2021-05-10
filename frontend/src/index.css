@@ -47,7 +47,7 @@ header {
   border-radius: 20px;
 }
 
-.RegisterPage header, .LoginPage header {
+.RegisterPage header, .LoginPage header, .LandingPage header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +71,8 @@ header div {
 .FormTitle {
   font-family: montserrat, sans-serif;
   font-size: x-large;
+  font-weight: bold;
+  color: #F33B7B;
 }
 
 .AlternativeLink {
@@ -80,7 +82,8 @@ header div {
 .AlternativeLink a {
   text-decoration: none;
   border-bottom: 1px solid #ffffff;
-  color: #000;
+  color: #F33B7B;
+  font-weight: bold;
 }
 
 .Error {

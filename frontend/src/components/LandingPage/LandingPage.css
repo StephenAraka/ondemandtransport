@@ -1,0 +1,19 @@
+.LandingPage {
+  display: grid;
+  gap: 2rem;
+}
+
+.ButtonSection {
+  display: grid;
+  gap: 1rem;
+  text-align: center;
+}
+
+
+.LandingLoginBtn {
+  color: white;
+  text-decoration: none;
+  background-color: #F33B7B;
+  text-align: center;
+  padding: .5rem 1rem;
+}

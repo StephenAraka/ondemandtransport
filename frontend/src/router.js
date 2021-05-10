@@ -6,9 +6,9 @@ import {
   Redirect
 } from 'react-router-dom';
 import store from './redux/store';
-import App from './components/TodoPage';
 import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
+import LandingPage from './components/LandingPage';
 
 // Protected route should have token. If not, login.
 const ProtectedRoute = ({ isAllowed, ...props }) => (
@@ -23,10 +23,10 @@ const Routes = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/login" component={LoginPage} />
-        <Route path="/register" component={RegisterPage} />
-        {/* <ProtectedRoute isAllowed={true} exact path="/" component={App} /> */}
-        <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} />
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={RegisterPage} />
+        {/* <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} /> */}
       </Switch>
     </Router>
   );
