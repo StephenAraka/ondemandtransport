@@ -38,7 +38,6 @@ body {
 header {
   padding: 2rem 0;
   background: #F33B7B;
-  /* background: #90C5FB; */
   text-align: center;
   color: #ffffff;
   font-size: x-large;
@@ -46,11 +45,6 @@ header {
   border-radius: 20px;
 }
 
-.RegisterPage header, .LoginPage header, .LandingPage header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 header div {
   padding: 0 1rem;
