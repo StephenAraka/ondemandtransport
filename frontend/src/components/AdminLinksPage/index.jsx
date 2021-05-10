@@ -10,27 +10,27 @@ const AdminLinksPage = (props) => {
       <div className="Form">
         <div className="FormTitle"></div>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-manager' className="LandingLoginBtn">
           Add manager
         </Link>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-driver' className="LandingLoginBtn">
           Add driver
         </Link>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-route' className="LandingLoginBtn">
           Add route
         </Link>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-zone' className="LandingLoginBtn">
           Add zones
         </Link>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-bus-stop' className="LandingLoginBtn">
           Add bus stop
         </Link>
 
-        <Link to='/login' className="LandingLoginBtn">
+        <Link to='/admin/add-bus' className="LandingLoginBtn">
           Add bus
         </Link>
 
