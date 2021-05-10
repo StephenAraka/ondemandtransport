@@ -7,9 +7,7 @@ import saveUser from '../../redux/actions/saveUser';
 import { isValidEmail, isValidUsername, trimmed } from '../../helpers';
 import Button from '../Button';
 import InputTextField from '../InputText';
-import Logo from '../Logo';
 import './RegisterPage.css';
-import API_URL from '../../config';
 
 const RegisterPage = (props) => {
   const [user, setUser ] = useState({
@@ -62,7 +60,7 @@ const RegisterPage = (props) => {
     }
     
     console.log(userInfo)
-    axios.post(`${API_URL}/api/user/register`, user)
+    axios.post('/api/WeGo/users', user)
       .then(res => {
         console.log(res.data)
         ;

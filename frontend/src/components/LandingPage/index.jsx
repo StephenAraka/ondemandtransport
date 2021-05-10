@@ -1,15 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import axios from 'axios';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import saveUser from '../../redux/actions/saveUser';
-import { isValidEmail, trimmed } from '../../helpers';
-import Button from '../Button';
-import Logo from '../Logo';
 import { ReactComponent as TaxiImg } from '../../assets/images/taxi.svg';
-import InputTextField from '../InputText';
-import API_URL from '../../config';
 import './LandingPage.css';
 
 const LandingPage = (props) => {

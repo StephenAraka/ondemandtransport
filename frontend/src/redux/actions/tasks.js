@@ -1,5 +1,4 @@
 import axios from 'axios';
-import API_URL from '../../config';
 import {
   FETCH_TASKS,
 } from './actionTypes';
@@ -12,7 +11,7 @@ const getTasks = (response) => ({
 
 const fetchTasks = (userID) => (dispatch) => {
 
-  axios.get(`${API_URL}/api/todo/${userID}`)
+  axios.get('api/todo/')
     .then((response) => dispatch(getTasks(response)))
     .catch((error) => console.log(error));
 };

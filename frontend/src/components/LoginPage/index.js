@@ -6,10 +6,7 @@ import { connect } from 'react-redux';
 import saveUser from '../../redux/actions/saveUser';
 import { isValidEmail, trimmed } from '../../helpers';
 import Button from '../Button';
-import Logo from '../Logo';
-import { ReactComponent as TaxiImg } from '../../assets/images/taxi.svg';
 import InputTextField from '../InputText';
-import API_URL from '../../config';
 import './LoginPage.css';
 
 const LoginPage = (props) => {
@@ -52,7 +49,7 @@ const LoginPage = (props) => {
     }
 
     console.log(userInfo)
-    axios.post(`${API_URL}/api/user/login`, userInfo)
+    axios.post('/api/WeGo/users', userInfo)             //!   Needs to be changed
       .then(res => {
         // save user data to store
         props.saveUser(res.data);
