@@ -44,7 +44,7 @@ const RegisterPage = (props) => {
       password: trimmed(password)
     }
     
-    if (!userInfo.email || !userInfo.password || !userInfo.name) {
+    if (!userInfo.firstname || !userInfo.lastname || !userInfo.email || !userInfo.password || !userInfo.phone ) {
       setError('All fields are required');
       return;
     }
@@ -62,14 +62,15 @@ const RegisterPage = (props) => {
     console.log(userInfo)
     axios.post('/api/WeGo/users', user)
       .then(res => {
-        console.log(res.data)
-        ;
+        console.log(res.data);
+        debugger
         props.saveUser(res.data);
         //! Once they've registered, redirect them to the tutorial page
         window.location.href = "/tutorial/todo";
       })
       .catch((err) => {
         setError('Registration failed.');
+        debugger
         console.log(err);
       });
   };
