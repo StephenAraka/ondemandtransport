@@ -16,13 +16,13 @@ import PassengerLinksPage from './components/PassengerLinksPage';
 import RequestRidePage from './components/RequestRidePage';
 
 // Protected route should have token. If not, login.
-const ProtectedRoute = ({ isAllowed, ...props }) => (
-  isAllowed
-    ? <Route {...props} />
-    : <Redirect to="/login" />
-);
+// const ProtectedRoute = ({ isAllowed, ...props }) => (
+//   isAllowed
+//     ? <Route {...props} />
+//     : <Redirect to="/login" />
+// );
 
-const hasToken = store.getState().user.accessToken;
+// const hasToken = store.getState().user.accessToken;
 
 const Routes = () => {
   return (
