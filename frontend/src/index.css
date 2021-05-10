@@ -33,7 +33,6 @@ body {
   width: min(90%, 70.5rem);
   flex-grow: 1;
   padding: 5rem 0;
-  /* background: #dfefff; */
 }
 
 header {
@@ -88,4 +87,16 @@ header div {
 
 .Error {
   color: #F44336;
+}
+
+@media screen and (min-width: 900px) {
+  .Page {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .Form {
+    width: 30rem;
+    align-self: center;
+  }
 }
