@@ -56,7 +56,7 @@ const RequestRidePage = (props) => {
 
     console.log(rideDetails)
 
-    axios.post('/api/WeGo/drivers', details)
+    axios.post('/api/WeGo/RideRequest', details)
       .then(res => {
         console.log(res.data);
         debugger
