@@ -8,14 +8,15 @@ import { isValidEmail, isValidUsername, trimmed } from '../../helpers';
 import Button from '../Button';
 import InputTextField from '../InputText';
 import './AddManager.css';
+import Navbar from '../Navbar';
 
-const RegisterPage = (props) => {
+const AddManagerPage = (props) => {
   const [user, setUser ] = useState({
     firstname: '',
     lastname: '',
     email: '',
     phone: '',
-    password: ''
+    address: ''
   });
   const [error, setError] = useState('');
 
@@ -33,7 +34,7 @@ const RegisterPage = (props) => {
   };
 
   const handleRegister = () => {
-    const { firstname, lastname, email, phone, password } = user;
+    const { firstname, lastname, email, phone, address } = user;
 
     //* Trim user details
     const userInfo = {
@@ -41,16 +42,21 @@ const RegisterPage = (props) => {
       lastname,
       email: trimmed(email),
       phone,
-      password: trimmed(password)
+      address
     }
     
-    if (!userInfo.firstname || !userInfo.lastname || !userInfo.email || !userInfo.password || !userInfo.phone ) {
+    if (!userInfo.firstname || !userInfo.lastname || !userInfo.email || !userInfo.address || !userInfo.phone ) {
       setError('All fields are required');
       return;
     }
 
-    if (!isValidUsername(userInfo.name)) {
-      setError('Username can only contain letters and numbers');
+    if (!isValidUsername(userInfo.firstname)) {
+      setError('Firstname can only contain letters and numbers');
+      return;
+    }
+
+    if (!isValidUsername(userInfo.lastname)) {
+      setError('Lastname can only contain letters and numbers');
       return;
     }
 
@@ -60,13 +66,16 @@ const RegisterPage = (props) => {
     }
     
     console.log(userInfo)
-    axios.post('/api/WeGo/users', user)
+
+    axios.post('/api/WeGo/Manager', user)
+
       .then(res => {
         console.log(res.data);
         debugger
-        props.saveUser(res.data);
+        // props.saveUser(res.data);
+        alert('Manager added successfully')
         //! Once they've registered, redirect them to the tutorial page
-        window.location.href = "/tutorial/todo";
+        window.location.href = "/";
       })
       .catch((err) => {
         setError('Registration failed.');
@@ -83,9 +92,10 @@ const RegisterPage = (props) => {
   }, []);
 
   return (
-    <div className="RegisterPage Page">
+    <div className="AddManagerPage Page">
+      <Navbar />
       <div className="Form">
-        <div className="FormTitle">sign up</div>
+        <div className="FormTitle">Add manager</div>
 
         <InputTextField
           required
@@ -125,10 +135,10 @@ const RegisterPage = (props) => {
 
         <InputTextField 
           required
-          type="password"
-          name="password"
-          value={user.password}
-          placeholder="Password"
+          type="text"
+          name="address"
+          value={user.address}
+          placeholder="Address"
           onChange={handleChange}
         />
 
@@ -139,13 +149,9 @@ const RegisterPage = (props) => {
         )}
 
         <Button
-          label="register"
+          label="add manager"
           onClick={handleRegister}
         />
-
-        <div className="AlternativeLink">
-          Have an account? <Link to='/login'>Login here</Link>
-        </div>
       </div>
     </div>
   )
@@ -159,11 +165,11 @@ const mapDispatchToProps = {
   saveUser
 };
 
-RegisterPage.propTypes = {
+AddManagerPage.propTypes = {
   saveUser: PropTypes.func.isRequired
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(RegisterPage));
+)(withRouter(AddManagerPage));
