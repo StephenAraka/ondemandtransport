@@ -14,6 +14,7 @@ import AddDriverPage from './components/AddDriverPage';
 import AdminLinksPage from './components/AdminLinksPage';
 import PassengerLinksPage from './components/PassengerLinksPage';
 
+
 // Protected route should have token. If not, login.
 // const ProtectedRoute = ({ isAllowed, ...props }) => (
 //   isAllowed
