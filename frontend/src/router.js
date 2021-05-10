@@ -25,8 +25,8 @@ const Routes = () => {
       <Switch>
         <Route path="/login" component={LoginPage} />
         <Route path="/register" component={RegisterPage} />
-        <ProtectedRoute isAllowed={true} exact path="/" component={App} />
-        {/* <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} /> */}
+        {/* <ProtectedRoute isAllowed={true} exact path="/" component={App} /> */}
+        <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} />
       </Switch>
     </Router>
   );
