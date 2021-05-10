@@ -7,10 +7,9 @@ import saveUser from '../../redux/actions/saveUser';
 import { isValidEmail, isValidUsername, trimmed } from '../../helpers';
 import Button from '../Button';
 import InputTextField from '../InputText';
-import './AddManager.css';
 import Navbar from '../Navbar';
 
-const AddManagerPage = (props) => {
+const AddDriverPage = (props) => {
   const [user, setUser ] = useState({
     firstName: '',
     lastName: '',
@@ -61,13 +60,13 @@ const AddManagerPage = (props) => {
     
     console.log(userInfo)
 
-    axios.post('/api/WeGo/Manager', userInfo)
+    axios.post('/api/WeGo/drivers', userInfo)
 
       .then(res => {
         console.log(res.data);
         debugger
         // props.saveUser(res.data);
-        alert('Manager added successfully')
+        alert('Driver added successfully')
         //! Once they've registered, redirect them to the tutorial page
         window.location.href = "/";
       })
@@ -86,10 +85,10 @@ const AddManagerPage = (props) => {
   }, []);
 
   return (
-    <div className="AddManagerPage Page">
+    <div className="AddDriverPage Page">
       <Navbar />
       <div className="Form">
-        <div className="FormTitle">Add manager</div>
+        <div className="FormTitle">Add driver</div>
 
         <InputTextField
           required
@@ -134,7 +133,7 @@ const AddManagerPage = (props) => {
         )}
 
         <Button
-          label="add manager"
+          label="add driver"
           onClick={handleRegister}
         />
       </div>
@@ -150,11 +149,11 @@ const mapDispatchToProps = {
   saveUser
 };
 
-AddManagerPage.propTypes = {
+AddDriverPage.propTypes = {
   saveUser: PropTypes.func.isRequired
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(withRouter(AddManagerPage));
+)(withRouter(AddDriverPage));

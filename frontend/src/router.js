@@ -10,6 +10,7 @@ import LoginPage from './components/LoginPage';
 import RegisterPage from './components/RegisterPage';
 import LandingPage from './components/LandingPage';
 import AddManagerPage from './components/AddManagerPage';
+import AddDriverPage from './components/AddDriverPage';
 
 // Protected route should have token. If not, login.
 const ProtectedRoute = ({ isAllowed, ...props }) => (
@@ -28,6 +29,7 @@ const Routes = () => {
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/admin/add-manager" component={AddManagerPage} />
+        <Route exact path="/admin/add-driver" component={AddDriverPage} />
         {/* <ProtectedRoute isAllowed={hasToken} exact path="/" component={App} /> */}
       </Switch>
     </Router>
