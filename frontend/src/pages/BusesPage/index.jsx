@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import './DriversPage.css';
+import './BusesPage.css';
 import axios from 'axios';
 import Button from '../../components/Button';
 import { trimmed } from '../../helpers';
 import InputTextField from '../../components/InputText';
 
 
-const DriversPage = (props) => {
-    const [driver, setDriver] = useState({
-        firstname: '',
-        lastname: '',
-        address: '',
-        telephone: '',
-        profilePicture: ''
+const BusesPage = (props) => {
+    const [bus, setBus] = useState({
+        plateNumber: '',
+        available: '',
+        driver: '',
+        issuingDate: '',
     });
     const [error, setError] = useState('');
     const handleChange = ({ target }) => {
@@ -24,8 +23,8 @@ const DriversPage = (props) => {
           setError('');
         }
     
-        setDriver({
-          ...driver,
+        setBus({
+          ...bus,
           [name]: value
         });
     };
@@ -37,24 +36,23 @@ const DriversPage = (props) => {
     }, []);
 
     const submit = () => {
-        const { firstname, lastname, address, telephone, profilePicture } = driver;
+        const { plateNumber, available, driver, issuingDate } = bus;
     
-        const driverInfo = {
-          firstname: trimmed(firstname),
-          lastname: trimmed(lastname),
-          address: trimmed(address),
-          telephone: trimmed(telephone),
-          profilePicture: trimmed(profilePicture),
+        const BusInfo = {
+          plateNumber: trimmed(plateNumber),
+          available: trimmed(available),
+          driver: trimmed(driver),
+          issuingDate: trimmed(issuingDate),
         }
     
-        if (!driverInfo.firstname || !driverInfo.lastname || !driverInfo.address || !driverInfo.telephone || !driverInfo.profilePicture  ) {
+        if (!bus.plateNumber || !bus.available || !bus.driver || !bus.issuingDate) {
           setError('All fields are required');
           return;
         }
         
-        console.log(driverInfo);
+        console.log(BusInfo);
         // Needs to be changed
-        axios.post('/api/WeGo/users', driverInfo)             
+        axios.post('/api/WeGo/users', BusInfo)             
           .then(res => {
             // save user data to store
             props.saveUser(res.data);
@@ -72,50 +70,41 @@ const DriversPage = (props) => {
     return(
         <div className="Page">
             <div className="Form">
-                <div className="FormTitle">Add Driver</div>
+                <div className="FormTitle">Add Bus</div>
         
                 <InputTextField
                     required
                     type="text"
-                    name="firstname"
-                    value={driver.firstname}
-                    placeholder="First Name"
+                    name="plateNumber"
+                    value={bus.plateNumber}
+                    placeholder="Plate Number"
                     onChange={handleChange}
                 />
 
                 <InputTextField
                     required
                     type="text"
-                    name="lastname"
-                    value={driver.lastname}
-                    placeholder="Last Name"
+                    name="available"
+                    value={bus.available}
+                    placeholder="Available"
                     onChange={handleChange}
                 />
 
                 <InputTextField
                     required
                     type="text"
-                    name="address"
-                    value={driver.address}
-                    placeholder="Address"
+                    name="driver"
+                    value={bus.driver}
+                    placeholder="driver"
                     onChange={handleChange}
                 />
 
                 <InputTextField
                     required
                     type="text"
-                    name="telephone"
-                    value={driver.telephone}
-                    placeholder="Telephone"
-                    onChange={handleChange}
-                />
-
-                <InputTextField
-                    required
-                    type="text"
-                    name="profilePicture"
-                    value={driver.profilePicture}
-                    placeholder="Profile Picture"
+                    name="issuingDate"
+                    value={bus.issuingDate}
+                    placeholder="Issuing Date"
                     onChange={handleChange}
                 />
         
@@ -126,7 +115,7 @@ const DriversPage = (props) => {
                 )}
         
                 <Button
-                    label="ADD DRIVER"
+                    label="ADD BUS"
                     onClick={submit}
                 />
     
@@ -135,4 +124,4 @@ const DriversPage = (props) => {
     )
 
 }
-export default connect()(withRouter(DriversPage));
+export default connect()(withRouter(BusesPage));
