@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Navbar from '../Navbar';
+import './MyRides.css';
 
 const MyRidesPage = (props) => {
   const [rides, setrides] = useState([]);
@@ -28,7 +29,13 @@ const MyRidesPage = (props) => {
     <div className="MyRidesPage Page">
       <Navbar />
       <div className="Form">
-        <div className="FormTitle"></div>
+        <div className="FormTitle">My rides</div>
+
+        <div className="Ride">
+          <div className="Date">Tuesday</div>
+          <div className="Departure">Departure</div>
+          <div className="Dest">Destination</div>
+        </div>
 
         <div className="Ride">
           <div className="Date">Tuesday</div>
