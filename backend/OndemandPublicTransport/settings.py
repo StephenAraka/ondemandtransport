@@ -14,7 +14,8 @@ SECRET_KEY = 'u=!=7_167ussb@gxjcv43*3juj*!6_zdupe0jnfq#42#eeks%3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS=['*']
+CORS_ORIGIN_ALLOW_ALL = True
 
 # To make our app to use our own created user
 AUTH_USER_MODEL = 'authentication.User'
@@ -36,6 +37,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'location_field.apps.DefaultConfig',
     'WeGo',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -46,7 +48,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'OndemandPublicTransport.urls'
 
@@ -74,13 +78,20 @@ WSGI_APPLICATION = 'OndemandPublicTransport.wsgi.application'
 
 # This is how we connect to the database.
 # I was using MongoDB
-DATABASES = {
+# DATABASES = {
 
+#     'default': {
+#         'ENGINE':'djongo',
+#         'NAME': 'TransportRwanda',
+#         'HOST': 'localhost',
+#         'PORT': '27017',
+#     }
+# }
+
+DATABASES = {
     'default': {
-        'ENGINE':'djongo',
-        'NAME': 'TransportRwanda',
-        'HOST': 'localhost',
-        'PORT': '27017',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
