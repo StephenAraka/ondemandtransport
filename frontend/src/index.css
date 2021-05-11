@@ -37,7 +37,7 @@ body {
 
 header {
   padding: 2rem 0;
-  background: #F33B7B;
+  background: #09475d;
   text-align: center;
   color: #ffffff;
   font-size: x-large;
@@ -65,7 +65,7 @@ header div {
   font-family: montserrat, sans-serif;
   font-size: x-large;
   font-weight: bold;
-  color: #F33B7B;
+  color: #09475d;
 }
 
 .AlternativeLink {
@@ -75,7 +75,7 @@ header div {
 .AlternativeLink a {
   text-decoration: none;
   border-bottom: 1px solid #ffffff;
-  color: #F33B7B;
+  color: #09475d;
   font-weight: bold;
 }
 
