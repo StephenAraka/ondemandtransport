@@ -29,8 +29,8 @@ const MyRidesPage = (props) => {
       <Navbar />
       <div className="Form">
         <div className="FormTitle">My Rides</div>
-        {rides.map(ride => (
-          <div className="Ride">
+        {rides.map((ride, index) => (
+          <div className="Ride" key={index}>
             <div className="Date">{ride.pickupTime}</div>
             <div className="Departure">{ride.departureLocation}</div>
             <div className="Dest">{ride.destinationLocation}</div>
