@@ -14,7 +14,7 @@ const PassengerLinksPage = (props) => {
           Request ride
         </Link>
 
-        <Link to='/passenger/view-rides' className="LandingLoginBtn">
+        <Link to='/passenger/my-rides' className="LandingLoginBtn">
           View my rides
         </Link>
 

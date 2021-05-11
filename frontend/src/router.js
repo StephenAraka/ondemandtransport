@@ -18,6 +18,7 @@ import ZonesPage from './pages/ZonesPage';
 import RoutesPage from './pages/RoutesPage';
 import BusesPage from './pages/BusesPage';
 import RequestRidePage from './components/RequestRidePage';
+import MyRidesPage from './components/MyRidesPage';
 // Protected route should have token. If not, login.
 // const ProtectedRoute = ({ isAllowed, ...props }) => (
 //   isAllowed
@@ -37,7 +38,7 @@ const Routes = () => {
         <Route exact path="/admin" component={AdminLinksPage} />
         <Route exact path="/passenger" component={PassengerLinksPage} />
         <Route exact path="/passenger/request-ride" component={RequestRidePage} />
-        <Route exact path="/passenger/my-rides" component={RequestRidePage} />
+        <Route exact path="/passenger/my-rides" component={MyRidesPage} />
         <Route exact path="/admin/add-manager" component={AddManagerPage} />
         <Route exact path="/admin/add-driver" component={AddDriverPage} />
         <Route exact path="/admin/add-busstop" component={BusstopsPage} />
