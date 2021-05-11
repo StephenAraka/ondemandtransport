@@ -65,14 +65,14 @@ const RegisterPage = (props) => {
     axios.post('/api/users/register/', user)
       .then(res => {
         console.log(res.data);
-        debugger
+        
         props.saveUser(res.data);
         //! Once they've registered, redirect them to the tutorial page
         window.location.href = "/tutorial/todo";
       })
       .catch((err) => {
         setError('Registration failed.');
-        debugger
+        
         console.log(err);
       });
   };

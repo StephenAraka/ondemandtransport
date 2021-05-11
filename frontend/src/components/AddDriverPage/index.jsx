@@ -64,7 +64,7 @@ const AddDriverPage = (props) => {
 
       .then(res => {
         console.log(res.data);
-        debugger
+        
         // props.saveUser(res.data);
         alert('Driver added successfully')
         //! Once they've registered, redirect them to the tutorial page
@@ -72,7 +72,7 @@ const AddDriverPage = (props) => {
       })
       .catch((err) => {
         setError('Process failed.');
-        debugger
+        
         console.log(err);
       });
   };

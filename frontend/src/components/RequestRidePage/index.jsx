@@ -57,14 +57,14 @@ const RequestRidePage = (props) => {
     axios.post('/api/rides/request', rideDetails)
       .then(res => {
         console.log(res.data);
-        debugger
+        
         // props.saveUser(res.data);
         alert('Your ride has been requested')
-        window.location.href = "/passengers/my-rides";
+        window.location.href = "/passenger/my-rides";
       })
       .catch((err) => {
         setError('Process failed.');
-        debugger
+        
         console.log(err);
       });
   };

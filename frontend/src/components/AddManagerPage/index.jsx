@@ -65,7 +65,7 @@ const AddManagerPage = (props) => {
 
       .then(res => {
         console.log(res.data);
-        debugger
+        
         // props.saveUser(res.data);
         alert('Manager added successfully')
         //! Once they've registered, redirect them to the tutorial page
@@ -73,7 +73,7 @@ const AddManagerPage = (props) => {
       })
       .catch((err) => {
         setError('Process failed.');
-        debugger
+        
         console.log(err);
       });
   };
