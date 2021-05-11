@@ -49,14 +49,19 @@ const LoginPage = (props) => {
     }
 
     console.log(userInfo)
-    axios.post('/api/WeGo/users', userInfo)             //!   Needs to be changed
+    axios.post('/api/users/login', userInfo)
       .then(res => {
         // save user data to store
         props.saveUser(res.data);
         // add access token to localstorage
-        localStorage.setItem('token', res.data.id);
-        
-        window.location.href = "/";
+        // localStorage.setItem('token', res.data.id);
+        localStorage.setItem('id', res.data.user);
+        // console.log(res);
+        if (res.data.role === 'passenger') {
+          window.location.href = "/passenger";
+        } else {
+          window.location.href = "/admin";
+        }                
       })
       .catch((err) => {
         setError('Incorrect email or password.');

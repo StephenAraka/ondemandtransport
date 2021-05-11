@@ -28,4 +28,4 @@ mongoose.connect(config.mongoURI, {
     console.log(`DB Connection Error: ${err.message}`)
 })
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 5000);

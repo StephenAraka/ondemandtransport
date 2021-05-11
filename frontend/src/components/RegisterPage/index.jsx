@@ -13,6 +13,7 @@ const RegisterPage = (props) => {
   const [user, setUser ] = useState({
     firstname: '',
     lastname: '',
+    role: '',
     email: '',
     phone: '',
     password: ''
@@ -33,18 +34,19 @@ const RegisterPage = (props) => {
   };
 
   const handleRegister = () => {
-    const { firstname, lastname, email, phone, password } = user;
+    const { firstname, lastname, role, email, phone, password } = user;
 
     //* Trim user details
     const userInfo = {
       firstname,
       lastname,
+      role,
       email: trimmed(email),
       phone,
       password: trimmed(password)
     }
     
-    if (!userInfo.firstname || !userInfo.lastname || !userInfo.email || !userInfo.password || !userInfo.phone ) {
+    if (!userInfo.firstname || !userInfo.lastname || !userInfo.role || !userInfo.email || !userInfo.password || !userInfo.phone ) {
       setError('All fields are required');
       return;
     }
@@ -60,7 +62,7 @@ const RegisterPage = (props) => {
     }
     
     console.log(userInfo)
-    axios.post('/api/WeGo/users', user)
+    axios.post('/api/users/register/', user)
       .then(res => {
         console.log(res.data);
         debugger
@@ -102,6 +104,15 @@ const RegisterPage = (props) => {
           name="lastname"
           value={user.lastname}
           placeholder="Last Name"
+          onChange={handleChange}
+        />
+
+        <InputTextField
+          required
+          type="text"
+          name="role"
+          value={user.role}
+          placeholder="Role"
           onChange={handleChange}
         />
 

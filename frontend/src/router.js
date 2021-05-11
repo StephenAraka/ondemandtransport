@@ -37,6 +37,7 @@ const Routes = () => {
         <Route exact path="/admin" component={AdminLinksPage} />
         <Route exact path="/passenger" component={PassengerLinksPage} />
         <Route exact path="/passenger/request-ride" component={RequestRidePage} />
+        <Route exact path="/passenger/my-rides" component={RequestRidePage} />
         <Route exact path="/admin/add-manager" component={AddManagerPage} />
         <Route exact path="/admin/add-driver" component={AddDriverPage} />
         <Route exact path="/admin/add-busstop" component={BusstopsPage} />

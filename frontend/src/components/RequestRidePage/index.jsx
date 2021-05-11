@@ -14,9 +14,8 @@ const RequestRidePage = (props) => {
   const [details, setDetails] = useState({
     departureLocation: '',
     destinationLocation: '',
-    numberOfSeets: '',
-    disabledPoeple: '',
-    passengers: ''
+    numberOfSits: '',
+    disabledPeople: '',
   });
 
   const [error, setError] = useState('');
@@ -40,29 +39,28 @@ const RequestRidePage = (props) => {
     const {
       departureLocation,
       destinationLocation,
-      numberOfSeets,
-      disabledPoeple,
-      passengers } = details;
+      numberOfSits,
+      disabledPeople} = details;
 
     //* Trim user details
 
-    if (!pickupTime || !departureLocation || !destinationLocation || !numberOfSeets || 
-      !disabledPoeple || !passengers) {
+    if (!pickupTime || !departureLocation || !destinationLocation || !numberOfSits || 
+      !disabledPeople) {
       setError('All fields are required');
       return;
     }
 
-    const rideDetails = { ...details, pickupTime };
+    const rideDetails = { ...details, pickupTime, passenger: localStorage.getItem('id') };
 
     console.log(rideDetails)
 
-    axios.post('/api/WeGo/RideRequest', details)
+    axios.post('/api/rides/request', rideDetails)
       .then(res => {
         console.log(res.data);
         debugger
         // props.saveUser(res.data);
         alert('Your ride has been requested')
-        // window.location.href = "/";
+        window.location.href = "/passengers/my-rides";
       })
       .catch((err) => {
         setError('Process failed.');
@@ -115,8 +113,8 @@ const RequestRidePage = (props) => {
         <InputTextField
           required
           type="number"
-          name="numberOfSeets"
-          value={details.numberOfSeets}
+          name="numberOfSits"
+          value={details.numberOfSits}
           placeholder="Number of seats"
           onChange={handleChange}
         />
@@ -124,18 +122,9 @@ const RequestRidePage = (props) => {
         <InputTextField
           required
           type="number"
-          name="disabledPoeple"
-          value={details.disabledPoeple}
+          name="disabledPeople"
+          value={details.disabledPeople}
           placeholder="Disabled people"
-          onChange={handleChange}
-        />
-
-        <InputTextField
-          required
-          type="email"
-          name="passengers"
-          value={details.passengers}
-          placeholder="Passenger"
           onChange={handleChange}
         />
 

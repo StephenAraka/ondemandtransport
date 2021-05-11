@@ -10,7 +10,6 @@ router.post('/request', async(req, res) => {
         destinationLocation: req.body.destinationLocation,
         numberOfSits: req.body.numberOfSits,
         disabledPeople: req.body.disabledPeople,
-        passengers: req.body.passengers
     });
     try {
         await ride.save();

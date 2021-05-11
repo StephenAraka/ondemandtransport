@@ -25,10 +25,6 @@ const RideSchema = mongoose.Schema({
         type: Number,
         required: true,
     },
-    passengers: {
-        type: Number,
-        required: true
-    }
 }, {
     timestamps: true
 });
