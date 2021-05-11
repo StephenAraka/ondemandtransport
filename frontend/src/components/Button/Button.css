@@ -9,3 +9,7 @@
   cursor: pointer;
 }
 
+.CancelBtn {
+  background-color: #FFFFFF;
+  color: #09475d;
+}

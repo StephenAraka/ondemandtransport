@@ -71,6 +71,11 @@ const RequestRidePage = (props) => {
       });
   };
 
+  const handleCancel = () => {
+    setError('Request cancelled');
+    setTimeout(() => setError(''), 2000);
+  }
+
   useEffect(() => {
     // remove the current state from local storage
     // so that when a person logs in they dont encounter
@@ -143,6 +148,12 @@ const RequestRidePage = (props) => {
         <Button
           label="request ride"
           onClick={handleRequestRide}
+        />
+
+        <Button
+          label="cancel"
+          className="CancelBtn"
+          onClick={handleCancel}
         />
       </div>
     </div>
