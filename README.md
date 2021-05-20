@@ -3,16 +3,13 @@ This is the project that will help in public transportation of commuters in real
 
 
 ## BACKEND SERVER
-### Remove all migrations 
+### Running Backend API
+- Ensure you have *nodejs* installed: [click here](https://nodejs.org/en/download/) to download
+- Navigate to the backend directory: `NodeAPI`
+- Run command `npm install`
+- Run command `npm start`. If successful, the API will be running at `http://127.0.0.1:5000/`
 
-Run these commands to delete all migrations:
-1. `find . -path "*/migrations/*.py" -not -name "__init__.py" -delete`
-2. `find . -path "*/migrations/*.pyc"  -delete`
 
-### Drop the database 
-### Re-create migrations 
-1. Run `python manage.py makemigrations`
-2. Run `python manage.py migrate`
 ## FRONTEND WEB CLIENT
 
 ### Getting started 
